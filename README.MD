@@ -39,13 +39,13 @@ Você consegue consultar ou cadastrar rastreio tanto por um Cliente Rest do pró
 <=> Carga Inicial no Banco de Dados
     * Tabela de Endereço
       INSERT INTO public.address(city, neighborhood, "number", state, street, zip_code)
-	  VALUES ('São Paulo', 'Vila Prudente', '92', 'SP', 'Rua Orlando Calixto', '03236000');
+	  VALUES ('São Paulo', 'Vila Prudente', '999', 'SP', 'Rua Orlando Calixto', '03236000');
 	* Tabela de Cliente
 	  INSERT INTO public.client(cpf, email, name, address_id)
-	  VALUES ('01044759518', 'igormn84@yahoo.com', 'Igor Macedo Nascimento', 1);
+	  VALUES ('50174523033', 'zemaria@yahoo.com', 'José Maria', 1);
 	* Tabela de Transportadora
 	  INSERT INTO public.shipping_company(cnpj, name)
 	  VALUES ('05628064000155', 'Flash Courier');
 	* Tabela de Compra
 	  INSERT INTO public.purchase(code, client_cpf, value)
-	  VALUES ('FC20181025P0001', '01044759518', '750');
+	  VALUES ('FC20181025P0001', '50174523033', '750');
