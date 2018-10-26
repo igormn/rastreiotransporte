@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>Tracking Transport</title>
+		<link href="/bootstrap_4_1_3/css/bootstrap.min.css" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="container">
+			<h1>LIST OF TRACKING BY PURCHASE</h1>
+			<hr/>
+			<form action="search" method="get">
+				<div class="form-group">
+			        <label for="codePurchase">Purchase Code:</label> 
+			        <input type="text" class="form-control" id="codePurchase" name="codePurchase" placeholder="Enter the complete Purchase Code" />
+			    </div>
+			    <button type="submit" class="btn btn-primary">Search</button>
+			</form>
+			<hr/>
+			<div id="listOfTrackings">
+			    <table class="table table-hover">
+			        <thead>
+				        <tr>
+				        	<th>PURCHASE CODE</th>
+				            <th>DATE</th>
+				            <th>SHIPPING COMPANY</th>
+				            <th>DESCRIPTION</th>
+				        </tr>
+			        </thead>
+			        <tbody>
+				        <tr th:each="tracking : ${trackings}">
+				        	<td> <span th:text="${tracking.purchase.code}"></span> </td>
+				            <td> <span th:text="${#dates.format(tracking.date, 'dd/MM/yyyy HH:mm:ss')}"></span> </td>
+				            <td> <span th:text="${tracking.shippingCompany.name}"></span> </td>
+				            <td> <span th:text="${tracking.description}"></span> </td>
+				        </tr>
+			        </tbody>
+			    </table>
+			</div>
+			<hr/>
+			<div>
+				<a href="newtracking" class="btn btn-lg btn-primary">Click here to Register New Tracking</a>
+			</div>
+		</div>
+	</body>
+</html>
